@@ -1,3 +1,5 @@
+console.log("JS loaded");
+
 const form = document.getElementById("uploadForm");
 
 form.addEventListener("submit", async (e) => {
@@ -6,16 +8,25 @@ form.addEventListener("submit", async (e) => {
     const fileInput = document.getElementById("file");
     const file = fileInput.files[0];
 
+    if (!file) {
+        alert("Please select a file");
+        return;
+    }
+
     const formData = new FormData();
     formData.append("file", file);
 
-    const res = await fetch("https://space-backend-15tg.onrender.com/predict", {
-        method: "POST",
-        body: formData
-    });
+    try {
+        const res = await fetch("https://space-backend-15tg.onrender.com/predict", {
+            method: "POST",
+            body: formData
+        });
 
-    const data = await res.json();
+        const data = await res.json();
 
-    console.log(data);
-    alert(data.message);
+        document.getElementById("result").innerText = data.message;
+    } catch (err) {
+        console.error(err);
+        alert("Error connecting to backend");
+    }
 });
