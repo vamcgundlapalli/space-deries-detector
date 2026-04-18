@@ -1,0 +1,16 @@
+ultralytics
+opencv-python
+torch
+torchvision
+streamlit
+numpy
+matplotlib
+pandas
+pillow
+tqdm
+pyyaml
+psutil
+fastapi==0.115.0
+uvicorn[standard]==0.32.0
+python-multipart==0.0.9
+flask
