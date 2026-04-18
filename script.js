@@ -1,4 +1,4 @@
-console.log("JS loaded");
+console.log("JS LOADED SUCCESSFULLY");
 
 const form = document.getElementById("uploadForm");
 
