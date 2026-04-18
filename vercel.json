@@ -8,6 +8,14 @@
         {
             "src": "index.html",
             "use": "@vercel/static"
+        },
+        {
+            "src": "script.js",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "style.css",
+            "use": "@vercel/static"
         }
     ],
     "routes": [
@@ -16,12 +24,16 @@
             "dest": "/index.html"
         },
         {
-            "src": "/api",
-            "dest": "app.py"
+            "src": "/script.js",
+            "dest": "/script.js"
         },
         {
-            "src": "/(.*)",
-            "dest": "/index.html"
+            "src": "/style.css",
+            "dest": "/style.css"
+        },
+        {
+            "src": "/api",
+            "dest": "app.py"
         }
     ]
 }
